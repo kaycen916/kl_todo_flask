@@ -17,7 +17,7 @@ class Signup(Resource):
         try:
             # 資料驗證
             # request.form接收前端Form表單傳過來的帳密
-            # Marshmallow中的users_schema.load進行驗證???
+            # Marshmallow中的users_schema.load進行驗證
             user_data = UserSchema().load(request.form, partial=True)
 
             # 註冊
@@ -65,6 +65,26 @@ class Logout(Resource):
         UserModel.remove_session()
         return {'msg': 'logout'}, 200
 
+class Modify(Resource):
+    def post(self):
+        try:
+            user_data = UserSchema().load(request.form)
+            name = user_data['name']
+            password = user_data['password'] # 新密碼
+            
+            user = UserModel.get_user(name)
+            if user:
+                user.password = password
+                db.session.commit() # 更新資料庫
+                return {'msg': 'Password updated successfully'}, 200
+            else:
+                return {'errors': 'User not found'}, 404
+        except:
+            return
+    def get(self):
+        return make_response(render_template('modify.html'))
+
 api.add_resource(Signup, '/signup')
 api.add_resource(Login, '/login')
 api.add_resource(Logout, '/logout')
+api.add_resource(Modify, '/modify')
