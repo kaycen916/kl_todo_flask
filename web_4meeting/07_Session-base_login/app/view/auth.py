@@ -72,6 +72,9 @@ class Modify(Resource):
             name = user_data['name']
             password = user_data['password'] # 新密碼
             
+            if name not in session['username']:
+                return {'errors': 'User not logged in'}, 401
+
             user = UserModel.get_user(name)
             if user:
                 user.password = password
