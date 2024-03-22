@@ -53,10 +53,22 @@ def create_app(config_name):
     @app.route('/member_list')
     def member_list_page():        
         from .model.user import UserModel, UserSchema
+        
+        # 1
+        # users = UserModel.query.all()
+        # # return users # 不能直接return list
+        # return render_template('member_list.html', users=users)
+
+        # 2
         users = UserModel.query.all()
         schema = UserSchema(many=True) # 處理多個物件
         users_data = schema.dump(users) # 序列化成JSON格式
+        # return jsonify(users_data)
         return render_template('member_list.html', users=users_data)
+
+        # 3
+        # users = UserModel.query.with_entities(UserModel.uid, UserModel.name).order_by(UserModel.uid.asc()).all()
+        # return render_template('member_list.html', users=users)
 
     return app
 
