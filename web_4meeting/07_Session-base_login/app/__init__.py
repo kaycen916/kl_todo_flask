@@ -62,7 +62,7 @@ def create_app(config_name):
         # 2
         users = UserModel.query.all()
         schema = UserSchema(many=True) # 處理多個物件
-        users_data = schema.dump(users) # 序列化成JSON格式
+        users_data = schema.dump(users) # 序列化成字典
         # return jsonify(users_data)
         return render_template('member_list.html', users=users_data)
 
