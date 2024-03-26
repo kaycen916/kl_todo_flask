@@ -1,7 +1,6 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect
 
 app = Flask(__name__)
-app.config.from_object("configs")
 
 @app.route("/")
 def index():
@@ -39,6 +38,19 @@ with app.test_request_context():
     print(url_for("hello-endpoint", name="world"))
     # /name/huiii?page=1
     print(url_for("show_name", name="huiii", page="1"))
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+@app.route("/contact/complete", methods=["GET", "POST"])
+def contact_complete():
+    if request.method =="POST":
+        # 傳送郵件
+
+        # 重新導向 contact 端點
+        return redirect(url_for("contact_complete"))
+    
+    return render_template("contact_complete.html")
 
 if __name__ == "__main__":
     # from gevent import pywsgi
