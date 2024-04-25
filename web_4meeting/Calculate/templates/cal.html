@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <TITLE>小小計算機</TITLE>
+    <link href="{{ url_for('static', filename='cal.css') }}" rel="stylesheet" type="text/css">
+    <!-- <script>
+alert("hihi")
+</script> -->
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body align="center">
+    <h1>精打細算小幫手</h1>
+    <!-- <p>
+        <IMG SRC=img/cal.jpg width="300px">
+    </p> -->
+    <!-- <hr> -->
+    <!-- <caption>
+        <h2><strong>神算V 計算通</strong></h2>
+    </caption> -->
+    <!-- <br> -->
+    <table align="center" id='calculate'>
+        <tr>
+            <th colspan="4"><input value="0" class="result"></th>
+        </tr>
+        <tr>
+            <td><input type="button" value="AC" class="AC" id="erase" onclick="clearNum()"></td>
+            <td><input type="button" value="%" class="formula" id="%" onclick="add(this)"></td>
+            <td><input type="button" value="√" class="formula" id="sqrt" onclick="add(this)"></td>
+            <td><input type="button" value="/" class="formula" id="/" onclick="add(this)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" class="number" id="7" onclick="add(this)"></td>
+            <td><input type="button" value="8" class="number" id="8" onclick="add(this)"></td>
+            <td><input type="button" value="9" class="number" id="9" onclick="add(this)"></td>
+            <td><input type="button" value="*" class="formula" id="*" onclick="add(this)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" class="number" id="4" onclick="add(this)"></td>
+            <td><input type="button" value="5" class="number" id="5" onclick="add(this)"></td>
+            <td><input type="button" value="6" class="number" id="6" onclick="add(this)"></td>
+            <td><input type="button" value="-" class="formula" id="-" onclick="add(this)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" class="number" id="1" onclick="add(this)"></td>
+            <td><input type="button" value="2" class="number" id="2" onclick="add(this)"></td>
+            <td><input type="button" value="3" class="number" id="3" onclick="add(this)"></td>
+            <td><input type="button" value="+" class="formula" id="+" onclick="add(this)"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" value="0" class="number_0" id="0" onclick="add(this)"></td>
+            <td><input type="button" value="." class="number" id="0." onclick="add(this)"></td>
+            <td><input type="button" value="=" class="formula" id="=" onclick="eva()"></td>
+        </tr>
+    </table>
+    <br>
+    <hr>
+    <h2>運算紀錄</h2>
+    <div id="calHistory">
+        
+    </div>
+</body>
+<script src={{ url_for('static', filename='cal.js') }}></script>
+
+</html>

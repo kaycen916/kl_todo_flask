@@ -1,0 +1,88 @@
+input[type=button] {
+    border: 0;
+    height: 60px;
+    width: 60px;
+}
+
+.formula {
+    border: 0;
+    background-color: #6fc57b;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.formula:hover {
+    color: #35803f;
+    background-color: #fff;
+    border: 2px #6fc57b solid;
+    font-size: 25px;
+}
+
+.number {
+    border: 0;
+    background-color: #69c9c1;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.number:hover {
+    color: #42a8a0;
+    background-color: #fff;
+    border: 2px #69c9c1 solid;
+    font-size: 25px;
+}
+
+.AC {
+    border: 0;
+    background-color: #5e0404;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    width: 60px !important;
+}
+
+.AC:hover {
+    color: #9d0049;
+    background-color: #fff;
+    border: 2px #5e0404 solid;
+    font-size: 25px;
+    width: 60px !important;
+}
+
+.number_0 {
+    border: 0;
+    background-color: #6683c2;
+    color: #fff;
+    border-radius: 32px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 120px !important;
+}
+
+.number_0:hover {
+    color: #51648d;
+    background-color: #fff;
+    border: 2px #6683c2 solid;
+    font-size: 25px;
+    width: 120px !important;
+}
+
+.result {
+    border-color: rgb(6, 6, 54);
+    border-width: 3px;
+    border-style: solid;
+    background-color: #e6d6be;
+    color: rgb(55, 7, 94);
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 20px;
+    width: auto;
+    height: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+}

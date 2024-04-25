@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<div class="column" style="background: rgb(83, 133, 183); font-size: 18px">
+    <h1 style="height: 20px; text-align: center; color: white">members information</h1>
+    <table border="3" cellpadding="3" cellspacing="0" bordercolor="#FFFFFF" style="height: 10px; border-collapse: separate;">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Registration Date</th>
+                <th>Update Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.uid }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>{{ user.insert_time }}</td>
+                    <td>{{ user.update_time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

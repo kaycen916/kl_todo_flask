@@ -1,0 +1,13 @@
+Model - 負責資料庫操作和儲存
+View(Flask內稱Templates) - 負責使用者介面設計
+Controller(Flask內稱View) - 負責對Request / Response 處理; 與Model的資料溝通，將資料串接到View(Templates)
+
+1. 測試連線 - http://127.0.0.1:5000/
+2. 建立資料庫(sqlite) - http://127.0.0.1:5000/create_all, 存放在/app/config/test.db
+3. 建立帳號 - http://127.0.0.1:5000/auth/signup
+4. 登入帳號 - http://127.0.0.1:5000/auth/login
+5. 登出帳號 - http://127.0.0.1:5000/auth/logout
+// 6. member權限 - http://127.0.0.1:5000/normal_member
+// 7. admin權限 - http://127.0.0.1:5000/admin_member
+8. 表格建立 - http://127.0.0.1:5000/member_list
+9. 修改密碼 - http://127.0.0.1:5000/auth/modify
